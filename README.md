@@ -1,7 +1,21 @@
-<<<<<<< HEAD
-# Bienes-Raices-CRUD-OOP
-Proyecto de bienes raíces CRUD con OOP (programación orientada a objetos)
-=======
-# Bienes-Raices-CRUD-OOP-v2
-Proyecto Bienes raíces versión 2
->>>>>>> 9de0ae21c137dade69c49d5fb2b1452c1eaeda55
+# Bienes raices CRUD v2
+Proyecto de bienes raíces (CRUD) con PHP OOP y PDO.
+
+<p align="center">
+  <img src="https://github.com/Hernanarica/Bienes_raices-CRUD/blob/main/src/img/port.jpg" />
+</p>
+
+```js
+class Project {
+  name      = 'Proyecto Bienes Raices';
+  developer = 'Hernán Arica';
+  location  = 'Ciudad de Buenos Aires, Argentina';
+}
+
+class Technologies {
+  languages  = ['css', 'html', 'javascript', 'php', 'sql'];
+  databases  = ['MySQL'];
+}
+```
+
+⭐️ From [HernanArica](https://github.com/Hernanarica)
