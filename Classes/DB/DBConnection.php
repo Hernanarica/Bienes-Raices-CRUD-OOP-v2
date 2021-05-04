@@ -3,7 +3,9 @@
 
 namespace App\DB;
 
+use Exception;
 use  PDO;
+use App\Session\Session;
 
 class DBConnection
 {

@@ -1,5 +1,7 @@
 <?php
 
+use App\Session\Session;
+
 require_once 'includes/app.php';
 
 $section = $_GET[ 's' ] ?? 'home';

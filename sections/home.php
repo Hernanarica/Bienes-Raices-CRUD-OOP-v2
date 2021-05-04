@@ -1,3 +1,9 @@
+<?php
+
+use App\Propiedad\Propiedad;
+
+$propiedades = (new Propiedad())::getSome(3);
+?>
 <main class="contenedor seccion">
 	<h1>Más Sobre Nosotros</h1>
 	<div class="iconos-nosotros">
@@ -27,31 +33,34 @@
 <section class="seccion contenedor">
 	<h2>Casas y Depas en Venta</h2>
 	<div class="contenedor-anuncios">
-		<div class="anuncio">
-			<img loading="lazy" src="" alt="anuncio">
-			<div class="contenido-anuncio">
-				<h3></h3>
-				<p></p>
-				<p class="precio"></p>
-				<ul class="iconos-caracteristicas">
-					<li>
-						<img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
-						<p></p>
-					</li>
-					<li>
-						<img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="icono estacionamiento">
-						<p></p>
-					</li>
-					<li>
-						<img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="icono habitaciones">
-						<p></p>
-					</li>
-				</ul>
-				<a href="#" class="boton-amarillo-block">
-					Ver Propiedad
-				</a>
+		<?php foreach ($propiedades as $propiedad): ?>
+			<div class="anuncio">
+				<img loading="lazy" src="" alt="anuncio">
+				<div class="contenido-anuncio">
+					<h3><?php echo $propiedad->getTitulo() ?></h3>
+					<p><?php echo $propiedad->getDescripcion(); ?></p>
+					<p class="precio"><?php echo $propiedad->getPrecio(); ?>$</
+					>
+					<ul class="iconos-caracteristicas">
+						<li>
+							<img class="icono" loading="lazy" src="build/img/icono_wc.svg" alt="icono wc">
+							<p><?php echo $propiedad->getWc(); ?></p>
+						</li>
+						<li>
+							<img class="icono" loading="lazy" src="build/img/icono_estacionamiento.svg" alt="icono estacionamiento">
+							<p><?php echo $propiedad->getEstacionamiento(); ?></p>
+						</li>
+						<li>
+							<img class="icono" loading="lazy" src="build/img/icono_dormitorio.svg" alt="icono habitaciones">
+							<p><?php echo $propiedad->getHabitaciones(); ?></p>
+						</li>
+					</ul>
+					<a href="#" class="boton-amarillo-block">
+						Ver Propiedad
+					</a>
+				</div>
 			</div>
-		</div>
+		<?php endforeach; ?>
 	</div>
 	<div class="alinear-derecha">
 		<a href="anuncios.php" class="boton-verde">Ver Todas</a>

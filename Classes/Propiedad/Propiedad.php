@@ -39,9 +39,6 @@ class Propiedad extends Model
 
 
 	/**
-	 * Me trae solo le cantidad de propiedades
-	 * que le pase por parámetro.
-	 *
 	 * @param int $amounts
 	 * @return Propiedad[]
 	 */
@@ -52,7 +49,8 @@ class Propiedad extends Model
 		$query = "SELECT * FROM propiedades LIMIT ?";
 
 		$stmt = $db->prepare($query);
-		$stmt->execute([$amounts]);
+		$stmt->bindParam(1, $amounts, PDO::PARAM_INT); //Vinculamos el parámetro de esta manera diciéndole a PDO que es un int
+		$stmt->execute();
 
 		return $stmt->fetchAll(PDO::FETCH_CLASS, self::class);
 	}

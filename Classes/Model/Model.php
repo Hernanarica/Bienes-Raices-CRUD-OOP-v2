@@ -4,6 +4,7 @@ namespace App\Model;
 
 use App\DB\DBConnection;
 use App\Propiedad\Propiedad;
+use Exception;
 use PDO;
 
 class Model
